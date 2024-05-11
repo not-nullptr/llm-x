@@ -3,8 +3,15 @@ import MobileSplashPanel from '~/features/settings/panels/MobileSplashPanel'
 import HelpPanel from '~/features/settings/panels/HelpPanel'
 import PersonaPanel from '~/features/settings/panels/PersonaPanel'
 import ModelPanel from '~/features/settings/panels/model/ModelPanel'
+import FunctionPanel from '~/features/settings/panels/FunctionPanel'
 
-export type SettingPanelOptionsType = 'general' | 'initial' | 'connection' | 'personas' | 'models'
+export type SettingPanelOptionsType =
+  | 'general'
+  | 'initial'
+  | 'connection'
+  | 'personas'
+  | 'models'
+  | 'functions'
 export type SettingPanelType = {
   label: string
   subtitle?: string
@@ -18,4 +25,5 @@ export const settingsPanelByName: Record<SettingPanelOptionsType, SettingPanelTy
   connection: { label: 'How To Connect', Component: HelpPanel },
   models: { label: 'Models', subtitle: 'Select a Model', Component: ModelPanel },
   personas: { label: 'Personas', subtitle: 'Select a Persona', Component: PersonaPanel },
+  functions: { label: 'Functions', subtitle: 'Edit your Functions', Component: FunctionPanel },
 }
